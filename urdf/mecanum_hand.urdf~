@@ -1,0 +1,582 @@
+<?xml version="1.0"?>  
+
+    <robot name="mecanum">  
+
+     
+
+
+
+
+ <link name="base_link">  
+<visual>  
+          <geometry>  
+            <box size="0.001 0.001 0.001"/>  
+        </geometry>  
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>  
+        <material name="blue">  
+            <color rgba="0 0 .8 1"/>  
+        </material>  
+        </visual>  
+    </link>  
+
+
+ <link name="base_footprint">  
+<visual>  
+          <geometry>  
+            <box size="0.001 0.001 0.001"/>  
+        </geometry>  
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>  
+        <material name="blue">  
+            <color rgba="0 0 .8 1"/>  
+        </material>  
+        </visual>  
+    </link>  
+
+
+
+ <link name="body">  
+<inertial>  
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>  
+      <mass value="1.0" />  
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+    </inertial>  
+
+<visual>  
+          <geometry>  
+            <box size="0.36 0.512 0.08"/>  
+        </geometry>  
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>  
+        <material name="blue">  
+            <color rgba="0 0 .8 1"/>  
+        </material>  
+        </visual>  
+
+<collision>
+<geometry>  
+            <box size="0.36 0.512 0.08"/>  
+        </geometry>  
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>  
+</collision>
+
+    </link>  
+
+
+<joint name="body_joint" type="fixed">
+    <origin xyz="0 0 0.05" rpy="0 0 0" />        
+    <parent link="base_link"/>
+    <child link="body" />
+  </joint>
+
+
+
+
+
+<link name="right_front_wheel">  
+<inertial>  
+      <mass value="0.1" />  
+       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+    </inertial>  
+
+<visual>  
+      <geometry>  
+       <cylinder length="0.068" radius="0.05"/>      
+      </geometry>  
+      <material name="black">  
+        <color rgba="0 0 0 1"/>  
+     </material>  
+   </visual>  
+
+<collision>
+      <geometry>  
+       <cylinder length="0.068" radius="0.05"/>      
+      </geometry>  
+</collision>
+
+  </link>  
+
+
+<joint name="right_front_wheel_joint" type="continuous">  
+
+    <axis xyz="0 0 1"/>  
+
+    <parent link="body"/>  
+
+    <child link="right_front_wheel"/>  
+
+    <origin rpy="1.57075 0 0" xyz="0.2 0.214 0"/>  
+
+    <limit effort="100" velocity="100"/>  
+
+    <joint_properties damping="0.0" friction="0.0"/>  
+
+  </joint>  
+
+
+<link name="right_back_wheel">  
+<inertial>  
+      <mass value="0.1" />  
+       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+    </inertial>  
+
+<visual>  
+      <geometry>  
+        <cylinder length="0.068" radius="0.05"/>  
+      </geometry>  
+      <material name="black">  
+        <color rgba="0 0 0 1"/>  
+      </material>  
+    </visual>  
+
+<collision>
+      <geometry>  
+       <cylinder length="0.068" radius="0.05"/>      
+      </geometry>  
+</collision>
+  </link>  
+
+ 
+
+  <joint name="right_back_wheel_joint" type="continuous">  
+
+    <axis xyz="0 0 1"/>  
+
+    <parent link="body"/>  
+
+    <child link="right_back_wheel"/>  
+
+    <origin rpy="1.57075 0 0" xyz="-0.2 0.214 0"/>  
+
+    <limit effort="100" velocity="100"/>  
+
+    <joint_properties damping="0.0" friction="0.0"/>  
+
+</joint>  
+
+
+<link name="left_front_wheel">  
+<inertial>  
+      <mass value="0.1" />  
+       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+    </inertial> 
+    
+<visual>  
+      <geometry>  
+        <cylinder length="0.068" radius="0.05"/>  
+      </geometry>  
+      <material name="black">  
+        <color rgba="0 0 0 1"/>  
+      </material>  
+    </visual>  
+
+<collision>
+      <geometry>  
+       <cylinder length="0.068" radius="0.05"/>      
+      </geometry>  
+</collision>
+  </link>  
+
+ 
+
+  <joint name="left_front_wheel_joint" type="continuous">  
+
+    <axis xyz="0 0 1"/>  
+
+    <parent link="body"/>  
+
+    <child link="left_front_wheel"/>  
+
+    <origin rpy="1.57075 0 0" xyz="0.2 -0.214 0"/>  
+
+    <limit effort="100" velocity="100"/>  
+
+    <joint_properties damping="0.0" friction="0.0"/>  
+
+  </joint>  
+
+
+
+<link name="left_back_wheel">  
+<inertial>  
+      <mass value="0.1" />  
+       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+    </inertial> 
+
+<visual>  
+      <geometry>  
+        <cylinder length="0.068" radius="0.05"/>  
+      </geometry>  
+      <material name="black">  
+        <color rgba="0 0 0 1"/>  
+      </material>  
+    </visual>  
+
+<collision>
+      <geometry>  
+       <cylinder length="0.068" radius="0.05"/>      
+      </geometry>  
+</collision>
+  </link>  
+
+ 
+
+  <joint name="left_back_wheel_joint" type="continuous">  
+
+    <axis xyz="0 0 1"/>  
+
+    <parent link="body"/>  
+
+    <child link="left_back_wheel"/>  
+
+    <origin rpy="1.57075 0 0" xyz="-0.2 -0.214 0"/>  
+
+    <limit effort="100" velocity="100"/>  
+
+    <joint_properties damping="0.0" friction="0.0"/>  
+
+  </joint>  
+
+
+
+  <!-- hand -->
+
+
+ <!-- hand LINK -->
+  <link name="hand_link">
+    <visual>
+      <origin rpy="1.570795 0 0" xyz="0 0 0.08"/>
+      <!-- rotate PI/2 -->
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="White"/>
+    </visual>
+    <collision>
+      <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+      <!-- rotate PI/2 -->
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+    &gt;
+	
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+<joint name="hand_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="body"/>
+    <child link="hand_link"/>
+  </joint>
+
+
+  <gazebo reference="hand_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+
+
+
+
+
+
+  <!-- SHOULDER PAN LINK -->
+  <link name="shoulder_pan_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="shoulder_pan_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="hand_link"/>
+    <child link="shoulder_pan_link"/>
+    <origin rpy="0 1.570795 0.0" xyz="0 0 0.05"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="300" lower="-2.61799387799" upper="1.98394848567" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+ 
+
+  <!-- SHOULDER PITCH LINK -->
+<link name="shoulder_pitch_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="-0.002 0 0.04"/>
+      <geometry>
+        <box size="0.14 0.04 0.04"/>
+      </geometry>
+      <material name="White"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="-0.002 0 0.04"/>
+      <geometry>
+        <box size="0.14 0.04 0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="shoulder_pitch_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+<joint name="shoulder_pitch_joint" type="revolute">
+    <parent link="shoulder_pan_link"/>
+    <child link="shoulder_pitch_link"/>
+    <origin rpy="-1.570795 0 1.570795" xyz="-0.041 0.0021 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" lower="-1.19962513147" upper="1.89994105047" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+
+<!-- ELBOW ROLL LINK -->
+  <link name="elbow_roll_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="-0.015 0.0 -0.0"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.02"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="-0.015 0.0 -0.0"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="elbow_roll_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+<joint name="elbow_roll_joint" type="revolute">
+    <parent link="shoulder_pitch_link"/>
+    <child link="elbow_roll_link"/>
+    <origin rpy="3.14159 1.570795 0" xyz="-0.002 0 0.1206"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="300" lower="-2.61799387799" upper="0.705631162427" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+
+<!-- ELBOW PITCH LINK -->
+  <link name="elbow_pitch_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="0 0 -0.12"/>
+      <geometry>
+        <box size="0.22 0.04 0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="0 0 -0.12"/>
+      <geometry>
+        <box size="0.22 0.04 0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="elbow_pitch_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+<joint name="elbow_pitch_joint" type="revolute">
+    <parent link="elbow_roll_link"/>
+    <child link="elbow_pitch_link"/>
+    <origin rpy="0.055 1.570795 0" xyz="-0.035 0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" lower="-1.5953400194" upper="1.93281579274" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+<!-- WRIST ROLL LINK -->
+  <link name="wrist_roll_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.02"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="wrist_roll_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+<joint name="wrist_roll_joint" type="revolute">
+    <parent link="elbow_pitch_link"/>
+    <child link="wrist_roll_link"/>
+    <origin rpy="0 1.570795 3.14159" xyz="0.0 0.0081 -.248"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" lower="-2.61799387799" upper="2.6128806087" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+<!-- WRIST PITCH LINK -->
+  <link name="wrist_pitch_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="0 0 0.04"/>
+      <geometry>
+        <box size="0.06 0.04 0.04"/>
+      </geometry>
+      <material name="White"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="0 0 0.04 "/>
+      <geometry>
+        <box size="0.06 0.04 0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="wrist_pitch_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+<joint name="wrist_pitch_joint" type="revolute">
+    <parent link="wrist_roll_link"/>
+    <child link="wrist_pitch_link"/>
+    <origin rpy="0 1.570795 0" xyz="0.0 0.0 0.0001"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" lower="-1.5953400194" upper="1.98394848567" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+ <!-- GRIPPER ROLL LINK -->
+  <link name="gripper_roll_link">
+    <visual>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 1.570795 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="gripper_roll_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+<joint name="gripper_roll_joint" type="revolute">
+    <parent link="wrist_pitch_link"/>
+    <child link="gripper_roll_link"/>
+    <origin rpy="4.712385 -1.570795 0" xyz="0 0 0.080"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" lower="-2.61799387799" upper="2.6128806087" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+<!-- LEFT GRIPPER AFT LINK -->
+  <link name="gripper_finger_link1">
+    <visual>
+      <origin xyz="0.04 -0.03 0"/>
+      <geometry>
+        <box size="0.08 0.01 0.01"/>
+      </geometry>
+      <material name="White"/>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="l_gripper_aft_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+ <joint name="finger_joint1" type="prismatic">
+    <parent link="gripper_roll_link"/>
+    <child link="gripper_finger_link1"/>
+    <origin xyz="0.0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="0" upper="0.03" velocity="1.0"/>
+    <safety_controller k_position="20" k_velocity="20" soft_lower_limit="-0.15" soft_upper_limit="0.0"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <!-- RIGHT GRIPPER AFT LINK -->
+  <link name="gripper_finger_link2">
+    <visual>
+      <origin xyz="0.04 0.03 0"/>
+      <geometry>
+        <box size="0.08 0.01 0.01"/>
+      </geometry>
+      <material name="White"/>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="r_gripper_aft_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+<joint name="finger_joint2" type="prismatic">
+    <parent link="gripper_roll_link"/>
+    <child link="gripper_finger_link2"/>
+    <origin xyz="0.0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1" lower="-0.03" upper="0" velocity="1.0"/>
+    <!--    <mimic joint="gripper_finger_joint" multiplier="-1.0" offset="0.0" /> -->
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+
+
+
+
+
+
+
+
+
+    </robot>

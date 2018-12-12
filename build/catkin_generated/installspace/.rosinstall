@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lincoln/catkin_ws/src/install/setup.sh

@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build",
+  "command": "/usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mecanum_hand\\\" -I/usr/include/eigen3 -I/opt/ros/indigo/include    -o CMakeFiles/car_trace.dir/src/car_trace.cpp.o -c /home/lincoln/catkin_ws/src/mecanum_hand/src/car_trace.cpp",
+  "file": "/home/lincoln/catkin_ws/src/mecanum_hand/src/car_trace.cpp"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build",
+  "command": "/usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mecanum_hand\\\" -I/usr/include/eigen3 -I/opt/ros/indigo/include    -o CMakeFiles/follow.dir/src/follow.cpp.o -c /home/lincoln/catkin_ws/src/mecanum_hand/src/follow.cpp",
+  "file": "/home/lincoln/catkin_ws/src/mecanum_hand/src/follow.cpp"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build",
+  "command": "/usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mecanum_hand\\\" -I/usr/include/eigen3 -I/opt/ros/indigo/include    -o CMakeFiles/odometry_publisher.dir/src/odometry_publisher.cpp.o -c /home/lincoln/catkin_ws/src/mecanum_hand/src/odometry_publisher.cpp",
+  "file": "/home/lincoln/catkin_ws/src/mecanum_hand/src/odometry_publisher.cpp"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build",
+  "command": "/usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mecanum_hand\\\" -I/usr/include/eigen3 -I/opt/ros/indigo/include    -o CMakeFiles/odometry_publishercar2.dir/src/odometry_publishercar2.cpp.o -c /home/lincoln/catkin_ws/src/mecanum_hand/src/odometry_publishercar2.cpp",
+  "file": "/home/lincoln/catkin_ws/src/mecanum_hand/src/odometry_publishercar2.cpp"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build",
+  "command": "/usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mecanum_hand\\\" -I/usr/include/eigen3 -I/opt/ros/indigo/include    -o CMakeFiles/vel_transfer.dir/src/vel_transfer.cpp.o -c /home/lincoln/catkin_ws/src/mecanum_hand/src/vel_transfer.cpp",
+  "file": "/home/lincoln/catkin_ws/src/mecanum_hand/src/vel_transfer.cpp"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build/gtest",
+  "command": "/usr/bin/c++   -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/gtest/include -I/usr/src/gtest  -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/gtest/src/gtest-all.cc",
+  "file": "/usr/src/gtest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/lincoln/catkin_ws/src/mecanum_hand/build/gtest",
+  "command": "/usr/bin/c++   -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -I/usr/src/gtest/include -I/usr/src/gtest  -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/gtest/src/gtest_main.cc",
+  "file": "/usr/src/gtest/src/gtest_main.cc"
+}
+]

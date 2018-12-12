@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lincoln/catkin_ws/src/mecanum_hand/src/param.cpp
+param.h
+/home/lincoln/catkin_ws/src/mecanum_hand/src/param.h
+stdio.h
+-
+iostream
+-
+
+/home/lincoln/catkin_ws/src/mecanum_hand/src/param.h
+Eigen/Dense
+-
+Eigen/Core
+-
+Eigen/LU
+-
+

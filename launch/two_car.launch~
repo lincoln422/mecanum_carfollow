@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+<node name="odometry_publisher" pkg="mecanum_hand" type="odometry_publisher"/>
+<node name="odometry_publishercar2" pkg="mecanum_hand" type="odometry_publishercar2"/>
+<node name="car_trace" pkg="mecanum_hand" type="car_trace"/>
+<node name="follow" pkg="mecanum_hand" type="follow"/>
+
+<group ns = "car1">
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mecanum_hand)/urdf/mecanum_hand.xacro' ns:=car1"/> 
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+</group>
+
+<group ns = "car2">
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mecanum_hand)/urdf/mecanum_hand.xacro' ns:=car2"/> 
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+</group>
+
+<node pkg="tf" type="static_transform_publisher" name="car1_broadcaster" args="0 0 0 0 0 0 1 odom base_link 100" />
+
+<node pkg="tf" type="static_transform_publisher" name="car1_car2" args="0 0 0 0 0 0 1 odom odomcar2 100" />
+
+<arg name="rviz_arg" value="-d $(find mecanum_hand)/launch/two_car.rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="$(arg rviz_arg)" output="screen"/>
+
+</launch>

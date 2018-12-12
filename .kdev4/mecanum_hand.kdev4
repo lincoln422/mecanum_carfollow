@@ -1,0 +1,37 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x18\x00m\x00e\x00c\x00a\x00n\x00u\x00m\x00_\x00h\x00a\x00n\x00d)
+
+[CMake]
+Build Directory Count=1
+Current Build Directory Index-Host System=0
+
+[CMake][CMake Build Directory 0]
+Build Directory Path=/home/lincoln/catkin_ws/src/mecanum_hand/build
+Build Type=
+CMake Binary=/usr/local/bin/cmake
+CMake Executable=/usr/local/bin/cmake
+Environment Profile=
+Extra Arguments=-DCATKIN_DEVEL_PREFIX=../../devel -DCMAKE_INSTALL_PREFIX=../../install
+Install Directory=
+Runtime=Host System
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=car_trace
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Arguments=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x02\x00\x00\x00\x18\x00m\x00e\x00c\x00a\x00n\x00u\x00m\x00_\x00h\x00a\x00n\x00d\x00\x00\x00\x12\x00c\x00a\x00r\x00_\x00t\x00r\x00a\x00c\x00e)
+Dependency Action=Build
+EnvironmentGroup=
+Executable=file:///home/lincoln/catkin_ws/src/mecanum_hand
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=mecanum_hand,follow
+Use External Terminal=false
+Working Directory=
+isExecutable=false

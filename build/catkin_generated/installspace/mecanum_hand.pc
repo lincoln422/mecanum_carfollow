@@ -1,0 +1,8 @@
+prefix=/home/lincoln/catkin_ws/src/install
+
+Name: mecanum_hand
+Description: Description of mecanum_hand
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lincoln/catkin_ws/src/install/lib 
+Requires: 

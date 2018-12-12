@@ -1,0 +1,35 @@
+<launch>     
+
+        <arg name="model" />      
+
+        <arg name="gui" default="False" />     
+
+        <param name="robot_description" textfile="$(find mecanum_hand)/urdf/mecanum_hand.urdf" />      
+
+        <param name="use_gui" value="$(arg gui)"/>     
+       
+<!--<node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">  
+        <rosparam file="$(find mecanum_hand)/config/smartcar_arbotix.yaml" command="load" /> 
+        <param name="sim" value="true"/>  
+    </node> -->
+ 
+
+ 
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+   <param name="/use_gui" value="true"/>
+
+
+        </node>      
+  
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="5.0" />
+  </node>
+
+ 
+
+
+
+   
+
+
+    </launch>
